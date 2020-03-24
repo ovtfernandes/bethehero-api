@@ -1,9 +1,11 @@
 const express = require('express');
+const cors = require('cors');
+const routes = require('./routes');
 
 const app = express();
 
-app.use('/', (req, res) => {
-    return res.send('Hello Omnistack 11.0!');
-});
+app.use(cors());
+app.use(express.json());
+app.use(routes);
 
 app.listen(3333);
